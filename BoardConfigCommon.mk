@@ -75,6 +75,20 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 TARGET_KERNEL_ADDITIONAL_CONFIG := cyanogenmod_debug_config
 endif
 
+# Fusion Optimizations
+FUSION_OPT= true
+FUSION_O3 := true
+FUSION_STRICT := false
+FUSION_OFAST := false
+FUSION_KRAIT := false
+FUSION_GRAPHITE := false
+FUSION_PIPE := false
+FUSION_ENABLE_GCCONLY := false
+FLOOP_NEST_OPTIMIZE := false
+FUSION_FFAST_MATH := false
+TARGET_FUSION_ROM := 4.9
+TARGET_FUSION_KERNEL := 5.2-sm
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
@@ -187,6 +201,9 @@ TARGET_USES_WCNSS_CTRL := true
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+# SaberMod
+-include vendor/fusion/config/sm.mk
 
 # inherit from the proprietary version
 -include vendor/cyanogen/msm8916-common/BoardConfigVendor.mk
